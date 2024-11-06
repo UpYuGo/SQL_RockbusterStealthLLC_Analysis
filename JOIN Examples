@@ -1,4 +1,4 @@
-# SQL CTE query to find the top 10 countries by the number of customers
+# SQL query to find the top 10 countries by the number of customers
 
 SELECT D.country,
   COUNT(customer_id) AS customer_quantity
@@ -10,7 +10,7 @@ GROUP BY country
 ORDER BY customer_quantity DESC
 LIMIT 10; 
 
-# SQL CTE query to find the top 10 cities within the top 10 countries
+# SQL query to find the top 10 cities within the top 10 countries
 
 SELECT D.country, C.city,
   COUNT(A.customer_id) AS customer_quantity
@@ -32,7 +32,7 @@ GROUP BY D.country, C.city
 ORDER BY customer_quantity DESC
 LIMIT 10;
 
-# SQL CTE query to find the top 5 customers by amount paid
+# SQL query to find the top 5 customers by amount paid
 
 SELECT B.customer_id, B.first_name, B.last_name,
 	SUM(A.amount) AS total_amount_paid
